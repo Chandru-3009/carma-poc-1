@@ -1,0 +1,33 @@
+[
+  {
+    "from": "sustainability@consultant.com",
+    "subject": "LEED certification documentation due",
+    "body": "Final LEED certification documents must be submitted by November 20th. Please compile all material data sheets and energy performance reports."
+  },
+  {
+    "from": "electrical@contractor.com",
+    "subject": "Solar panel installation complete - ready for inspection",
+    "body": "Rooftop solar panel array installation complete. Electrical connection ready. Requesting utility inspection before grid connection."
+  },
+  {
+    "from": "materials@supplier.com",
+    "subject": "Eco-friendly flooring delayed - alternative material available",
+    "body": "Specified bamboo flooring unavailable until January. We can substitute with FSC-certified hardwood at similar cost. Approval needed ASAP."
+  },
+  {
+    "from": "hvac@specialist.com",
+    "subject": "High-efficiency HVAC system commissioning",
+    "body": "Geothermal HVAC system ready for final commissioning. Testing scheduled for next week. System exceeds energy efficiency targets by 15%."
+  },
+  {
+    "from": "architect@firm.com",
+    "subject": "Rainwater collection system coordination required",
+    "body": "Need coordination meeting between plumbing, structural, and landscape trades for integrated rainwater collection system installation."
+  },
+  {
+    "from": "project.director@builder.com",
+    "subject": "Client walkthrough scheduled - sustainability features",
+    "body": "Client wants to see completed sustainability features including green roof, solar panels, and efficient lighting. Walkthrough scheduled for Friday at 2 PM."
+  }
+]
+

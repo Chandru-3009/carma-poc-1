@@ -1,0 +1,86 @@
+[
+  {
+    "id": "EML-TOWER-001",
+    "from": "vendor@acmehvac.com",
+    "to": "pm@builder.com",
+    "subject": "Air Handling Unit Delivery Delay - Customs Clearance Issue",
+    "body": "Good morning, I'm writing to inform you about a delay in the delivery of the two primary air handling units (AHU-1 and AHU-2) for the Downtown Office Tower project. The units are currently held at customs due to missing documentation for the imported components. We've been working with customs to resolve this, but it's taking longer than anticipated. The original delivery date was November 2nd, but we now anticipate delivery on November 5th - a delay of three business days. This may impact your MEP installation schedule. I've attached the updated shipping documentation. We're expediting the customs clearance process and will provide daily updates. Apologies for the inconvenience. Best regards, Jennifer Lee, Logistics Manager",
+    "category": "Material Delay",
+    "summary": "There is a delay in the delivery of two air handling units due to customs clearance issues, with the new anticipated delivery date being November 5th.",
+    "action_required": "Monitor the customs clearance process and adjust the MEP installation schedule accordingly.",
+    "priority": "High",
+    "due_date": "2023-11-05"
+  },
+  {
+    "id": "EML-TOWER-003",
+    "from": "electrical@contractor.com",
+    "to": "pm@builder.com",
+    "subject": "Weekly Progress Update - Level 18 Electrical Rough-In Complete",
+    "body": "Hi, Just wanted to provide a quick update on our electrical progress. We've completed the rough-in work for Level 18 this week, ahead of schedule. All branch circuits, panel feeds, and low voltage conduit are installed per the approved shop drawings. We've scheduled the electrical inspection with the city for Friday, November 1st at 2:00 PM. Assuming we pass, we'll proceed with Level 19 next week. Our team will also begin pulling wire for Level 17 as planned. Please let me know if you have any questions or concerns. Regards, Carlos Mendez, Electrical Superintendent",
+    "category": "Schedule Update",
+    "summary": "The electrical rough-in for Level 18 has been completed ahead of schedule, and an inspection is scheduled for November 1st.",
+    "action_required": "Confirm the inspection schedule and prepare for the next steps based on the inspection outcome.",
+    "priority": "Medium",
+    "due_date": "2023-11-01"
+  },
+  {
+    "id": "EML-TOWER-004",
+    "from": "submittals@facadesystems.com",
+    "to": "pe@builder.com",
+    "subject": "Submittal Package - Curtain Wall System and Components",
+    "body": "Hello, Please find attached the complete submittal package for the curtain wall system as specified in Sections 08410 and 08510. The package includes: detailed shop drawings (32 sheets), structural calculations signed and sealed by a licensed engineer, material test reports, thermal performance data, and finish samples. We've also included the proposed installation sequence and schedule. All components meet or exceed the specified performance criteria. Please distribute to the architect for review and approval. Our fabrication lead time is 8 weeks from approval, so timely review is critical to maintain the project schedule. Reference number: CW-DOT-2025-001. Best regards, Richard Kim, Technical Manager",
+    "category": "Submittal",
+    "summary": "The email contains a complete submittal package for the curtain wall system, including shop drawings, calculations, and samples, and requests distribution to the architect for review and approval.",
+    "action_required": "Distribute the submittal package to the architect for review and approval.",
+    "priority": "High",
+    "due_date": ""
+  },
+  {
+    "id": "EML-TOWER-005",
+    "from": "steel@fabricator.com",
+    "to": "pm@builder.com",
+    "subject": "Elevator Shaft Steel Delay - Fabrication Issue",
+    "body": "I need to inform you of a delay in the elevator shaft steel fabrication. During quality control inspection, we discovered that some of the steel plates for the elevator shaft on the east side don't meet the required thickness tolerance. This requires re-fabrication of 12 pieces. The delay will push delivery from November 5th to November 12th - approximately one week. I've discussed this with our production team and we're putting extra resources on this to minimize the delay. We're doing everything possible to get this back on track. I'll provide daily updates on the fabrication progress. Sorry for the inconvenience. Regards, Thomas Bradley, Fabrication Manager",
+    "category": "Material Delay",
+    "summary": "There is a delay in the elevator shaft steel fabrication due to quality control issues, pushing the delivery date from November 5th to November 12th.",
+    "action_required": "Monitor the fabrication progress and await daily updates.",
+    "priority": "Medium",
+    "due_date": "2023-11-12"
+  },
+  {
+    "id": "EML-TOWER-006",
+    "from": "pm@builder.com",
+    "to": "client@developercorp.com",
+    "subject": "Monthly Project Update - October 2025",
+    "body": "Dear Client, I'm pleased to provide the monthly progress update for the Downtown Office Tower project. We've reached 65% overall completion, with structural work at 80%, MEP rough-in at 60%, and facade installation at 40%. Notable achievements this month include completion of Level 18 structural steel and successful installation of the main elevator equipment. We've encountered minor delays with elevator shaft steel fabrication (one week impact) and AHU delivery (three-day delay). These are being managed and won't impact the critical path. Attached is the detailed progress report and updated schedule. Our next milestone is completing Level 20 structural work by November 15th. Best regards, Project Management Team",
+    "category": "Schedule Update",
+    "summary": "The email provides a monthly progress update for the Downtown Office Tower project, detailing completion percentages and minor delays encountered, while confirming that these delays won't affect the critical path.",
+    "action_required": "Review the attached detailed progress report and updated schedule.",
+    "priority": "Medium",
+    "due_date": "2025-11-15"
+  },
+  {
+    "id": "EML-TOWER-007",
+    "from": "mep@coordinator.com",
+    "to": "pe@builder.com",
+    "subject": "MEP Coordination Meeting - Ceiling Space Conflicts",
+    "body": "Hi, We need to schedule a coordination meeting to resolve several conflicts in the ceiling plenum on Levels 16-18. The conflicts involve: HVAC ductwork interfering with sprinkler main lines, electrical conduit routing blocking access to air handling units, and plumbing lines conflicting with structural bracing. I've prepared conflict markups on the BIM model (see attached screenshots). We have three potential solutions, but we need input from all trades to determine the best approach. Can we schedule this for Friday, November 8th at 1:00 PM? Please confirm attendance from electrical, plumbing, fire protection, and structural. Thanks, Maria Santos, MEP Coordinator",
+    "category": "Coordination",
+    "summary": "Maria Santos is requesting to schedule a coordination meeting to address conflicts in the ceiling plenum on Levels 16-18, involving HVAC, electrical, and plumbing systems, and seeks input from all trades.",
+    "action_required": "Confirm attendance from electrical, plumbing, fire protection, and structural trades for the meeting on November 8th.",
+    "priority": "High",
+    "due_date": "2023-11-08"
+  },
+  {
+    "id": "EML-TOWER-008",
+    "from": "scheduler@builder.com",
+    "to": "pm@builder.com",
+    "subject": "Revised Schedule - November Critical Path Update",
+    "body": "I've updated the master schedule to reflect the recent delays with elevator shaft steel and AHU delivery. The impact analysis shows that with the current delays, we can still meet the November 30th milestone for completing Level 20, but it requires accelerating work on Level 19. I've identified opportunities to compress the schedule by overlapping electrical and plumbing rough-in work. The updated schedule document is attached. Please review and let me know if you'd like to discuss schedule recovery options during our weekly meeting. The critical path remains the elevator core, and we're monitoring this closely. Best, Scheduling Team",
+    "category": "Schedule Update",
+    "summary": "The master schedule has been updated to address delays with elevator shaft steel and AHU delivery, indicating that the November 30th milestone for Level 20 can still be met with accelerated work on Level 19.",
+    "action_required": "Review the updated schedule document and discuss schedule recovery options during the weekly meeting.",
+    "priority": "Medium",
+    "due_date": "2023-11-30"
+  }
+]

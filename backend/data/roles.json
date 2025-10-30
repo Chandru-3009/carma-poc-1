@@ -1,0 +1,24 @@
+[
+  {
+    "name": "Project Manager",
+    "description": "Oversees overall project communication, RFIs, and schedule updates."
+  },
+  {
+    "name": "Project Engineer",
+    "description": "Handles submittals, RFIs, and trade correspondence."
+  },
+  {
+    "name": "Superintendent",
+    "description": "Manages field operations, daily logs, and punch lists."
+  },
+  {
+    "name": "Subcontractor",
+    "description": "Sends updates on materials, deliveries, and progress."
+  },
+  {
+    "name": "Executive",
+    "description": "Views summary-level project analytics and KPIs."
+  }
+]
+
+

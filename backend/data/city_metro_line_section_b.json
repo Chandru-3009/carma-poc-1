@@ -1,0 +1,33 @@
+[
+  {
+    "from": "structural@engineer.com",
+    "subject": "Tunnel boring machine maintenance scheduled",
+    "body": "TBM requires scheduled maintenance downtime from Nov 10-12. This will pause excavation for Section B-3. Schedule impact: 2 days delay."
+  },
+  {
+    "from": "safety.officer@construction.com",
+    "subject": "Safety protocol violation - improper venting",
+    "body": "Inspector noted improper ventilation setup in tunnel section. Immediate correction required before work can resume. Safety meeting scheduled for tomorrow."
+  },
+  {
+    "from": "materials@supplier.com",
+    "subject": "Reinforcing steel delivery confirmed",
+    "body": "All reinforcing steel for Section B-4 tunnel lining delivered and staged. Ready for placement starting Monday morning."
+  },
+  {
+    "from": "coordinator@field.com",
+    "subject": "Utility relocation conflict detected",
+    "body": "Existing 12-inch water main conflicts with planned tunnel alignment. Coordination meeting with city utilities department required."
+  },
+  {
+    "from": "geotechnical@consultant.com",
+    "subject": "Soil stability report - Section B-5",
+    "body": "Geotechnical analysis complete. Soil conditions suitable for planned excavation. Report uploaded to project portal."
+  },
+  {
+    "from": "project.manager@builder.com",
+    "subject": "Weekly progress - Section B ahead of schedule",
+    "body": "Section B progress: 72% complete, 5 days ahead of schedule. Tunneling operations running smoothly. Next milestone: Section B-6 breakthrough expected next week."
+  }
+]
+

@@ -1,0 +1,33 @@
+[
+  {
+    "from": "medical.gas@specialist.com",
+    "subject": "Medical gas system testing scheduled",
+    "body": "Comprehensive testing of all medical gas systems scheduled for November 5th. All trade foremen must be present for coordination."
+  },
+  {
+    "from": "plumbing@trade.com",
+    "subject": "RFI: Water pressure requirements for surgical suites",
+    "body": "Need clarification on required water pressure for surgical suite fixtures. Specification sheet shows 80 PSI but code requires minimum 60 PSI."
+  },
+  {
+    "from": "coordinator@field.com",
+    "subject": "Critical path update - Imaging equipment delivery delayed",
+    "body": "MRI equipment delivery delayed by 3 weeks due to manufacturer backlog. This impacts critical path for imaging suite completion."
+  },
+  {
+    "from": "electrical@contractor.com",
+    "subject": "Emergency power system submittal ready",
+    "body": "Complete submittal package for emergency generator and transfer switches ready for review. Includes load calculations and test data."
+  },
+  {
+    "from": "permits@municipal.gov",
+    "subject": "Building permit inspection - Medical facility requirements",
+    "body": "Health department inspection scheduled for November 15th. Please ensure all medical gas and life safety systems are fully operational."
+  },
+  {
+    "from": "inventory@warehouse.com",
+    "subject": "Critical material shortage: Isolation doors",
+    "body": "Lead time for hospital-grade isolation doors extended to 16 weeks. May need to adjust sequencing for patient room completion."
+  }
+]
+

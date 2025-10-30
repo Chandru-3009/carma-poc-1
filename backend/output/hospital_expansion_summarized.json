@@ -1,0 +1,98 @@
+[
+  {
+    "id": "EML-HOSP-001",
+    "from": "john.martinez@steelco.com",
+    "to": "sarah.chen@builder.com",
+    "subject": "Structural Steel Delivery Delay - Week 4 Impact",
+    "body": "Hi Sarah, I need to inform you that our structural steel shipment for the Hospital Expansion project has been delayed by approximately one week. The fabricator encountered quality issues during final inspection that required additional testing. We've resolved the issue, but this pushes our delivery date from October 28th to November 4th. This will impact the frame erection schedule for the new wing. I've attached the updated delivery schedule and quality certification documents. Please let me know how you'd like to proceed with adjusting the construction timeline. Best regards, John Martinez, Procurement Manager",
+    "category": "Material Delay",
+    "summary": "The structural steel shipment for the Hospital Expansion project has been delayed by one week due to quality issues, affecting the frame erection schedule.",
+    "action_required": "Discuss and adjust the construction timeline based on the new delivery date.",
+    "priority": "High",
+    "due_date": "2023-11-04"
+  },
+  {
+    "id": "EML-HOSP-002",
+    "from": "architect@designassociates.com",
+    "to": "sarah.chen@builder.com",
+    "subject": "RFI #205 - Ceiling Type Specification for Patient Rooms",
+    "body": "Good morning, I'm working on finalizing the ceiling details for the patient rooms in the new expansion wing. I need clarification on Spec Section 095123. The specification calls for a suspended acoustical ceiling system, but I notice in the construction documents that some areas show exposed structure. Can you confirm which ceiling type applies to the patient rooms on Level 2? Specifically, do we proceed with the suspended acoustical system as specified, or is there a design change? I need this confirmed by Friday to complete the interior elevations. Thank you, Michael Chen, Senior Architect",
+    "category": "RFI",
+    "summary": "Michael Chen is requesting clarification on the ceiling type specification for patient rooms in the new expansion wing, specifically whether to use a suspended acoustical ceiling system or if there is a design change.",
+    "action_required": "Confirm the ceiling type for patient rooms on Level 2 by Friday.",
+    "priority": "High",
+    "due_date": "2023-10-27"
+  },
+  {
+    "id": "EML-HOSP-003",
+    "from": "lisa.thompson@mepconsulting.com",
+    "to": "david.rodriguez@builder.com",
+    "subject": "HVAC Coordination Conflict - Ductwork vs. Structural Beam",
+    "body": "David, I've identified a coordination issue on the third floor MEP routing. The main supply duct (24\" x 12\") for the ICU section conflicts with a structural beam that runs perpendicular to our duct route. The beam sits at 10' - 6\" AFF, and our duct needs 12\" clearance. The structural drawings show the beam depth as 16\", which doesn't leave adequate space. We have three options: 1) Route the duct around the beam (requires additional elbows and increases static pressure), 2) Lower the duct to 9' - 6\" AFF (violates code clearance requirements), or 3) Request structural modification to provide a pocket or notch. Please advise on the preferred solution. We need resolution by Monday to maintain schedule. Best regards, Lisa Thompson, MEP Lead",
+    "category": "Coordination",
+    "summary": "Lisa identified a conflict between the HVAC ductwork and a structural beam on the third floor, outlining three potential solutions and requesting guidance on the preferred option.",
+    "action_required": "Advise on the preferred solution to resolve the coordination issue.",
+    "priority": "High",
+    "due_date": "2023-10-30"
+  },
+  {
+    "id": "EML-HOSP-004",
+    "from": "procurement@builder.com",
+    "to": "sarah.chen@builder.com",
+    "subject": "Medical Equipment Delivery Schedule Update - MRI Suite",
+    "body": "Sarah, I wanted to give you an update on the MRI equipment delivery. The manufacturer has confirmed that the equipment is ready for shipment, but they're requesting we push the delivery date by one week. The reason is they want to complete additional factory testing to ensure compatibility with the new shielding specifications we provided. The new delivery window is November 8-10 (previously November 1-3). This impacts the imaging suite completion timeline. The room prep work can continue as scheduled, but final installation and commissioning will be delayed. I've updated the master schedule document. Please review and let me know if we need to adjust any trade coordination. Regards, James Park, Procurement Coordinator",
+    "category": "Material Delay",
+    "summary": "The MRI equipment delivery has been delayed by one week due to additional factory testing, impacting the completion timeline of the imaging suite.",
+    "action_required": "Review the updated master schedule and determine if trade coordination adjustments are necessary.",
+    "priority": "Medium",
+    "due_date": "2023-11-08"
+  },
+  {
+    "id": "EML-HOSP-005",
+    "from": "submittals@glazingvendor.com",
+    "to": "david.rodriguez@builder.com",
+    "subject": "Submittal Package - Curtain Wall System for New Wing",
+    "body": "Hello David, Attached please find the complete submittal package for the curtain wall system as specified in Section 08410. This package includes: shop drawings (24 sheets), material data sheets for all aluminum extrusions and glazing, structural calculations, thermal performance data, and physical samples of finishes. We've also included the test reports from the independent lab for air infiltration, water penetration, and structural load testing. Please forward to the architect for review and approval. According to the contract, we require approval within 14 business days to maintain our fabrication schedule. The submittal reference number is CW-2025-08410-HOSP. Let me know if you need any additional information. Best regards, Patricia Wilson, Submittals Manager",
+    "category": "Submittal",
+    "summary": "The email contains a complete submittal package for the curtain wall system, including shop drawings, material data sheets, and test reports, and requests forwarding to the architect for review and approval within 14 business days.",
+    "action_required": "Forward the submittal package to the architect for review and approval.",
+    "priority": "High",
+    "due_date": ""
+  },
+  {
+    "id": "EML-HOSP-006",
+    "from": "inspector@citybuildingdept.gov",
+    "to": "david.rodriguez@builder.com",
+    "subject": "Building Inspection Schedule - Foundation and Framing",
+    "body": "Mr. Rodriguez, This is to confirm the upcoming inspections for the Hospital Expansion project. We have scheduled the foundation inspection for Thursday, November 7th at 10:00 AM, and the structural framing inspection for Friday, November 8th at 2:00 PM. Please ensure all required documentation is on-site, including the foundation survey, structural calculations, and any applicable change orders. The site superintendent should be available to walk through both inspections. If there are any scheduling conflicts, please notify us at least 48 hours in advance. Inspection cards must be posted and accessible. Thank you, Robert Anderson, Building Inspector",
+    "category": "Schedule Update",
+    "summary": "The email confirms the schedule for upcoming inspections for the Hospital Expansion project, detailing dates and required documentation.",
+    "action_required": "Ensure all required documentation is on-site and confirm availability of the site superintendent for the inspections.",
+    "priority": "High",
+    "due_date": "2023-11-07"
+  },
+  {
+    "id": "EML-HOSP-007",
+    "from": "sarah.chen@builder.com",
+    "to": "allteam@builder.com",
+    "subject": "Weekly Progress Meeting Agenda - Week of Oct 28",
+    "body": "Team, Our weekly progress meeting is scheduled for Wednesday, November 6th at 9:00 AM in the job trailer. Agenda items include: review of structural steel delivery delay and schedule impacts, discussion of HVAC coordination conflicts on Level 3, update on medical equipment delivery timeline, and review of pending submittals. Please come prepared with your action items and any concerns. We'll also review the updated master schedule reflecting the recent changes. Coffee and donuts will be provided. See you there, Sarah Chen, Project Manager",
+    "category": "Schedule Update",
+    "summary": "The weekly progress meeting is scheduled for November 6th to discuss various agenda items including delivery delays, coordination conflicts, and updates on submittals and the master schedule.",
+    "action_required": "Prepare action items and concerns for the meeting.",
+    "priority": "Medium",
+    "due_date": "2019-11-06"
+  },
+  {
+    "id": "EML-HOSP-008",
+    "from": "safety@builder.com",
+    "to": "david.rodriguez@builder.com",
+    "subject": "Safety Incident Report - Near Miss on Site",
+    "body": "David, I need to report a near miss incident that occurred yesterday afternoon. While working on the third floor, a worker was positioning a piece of steel when a section of temporary guardrail came loose. Fortunately, no one was injured, but this highlights a safety concern. The guardrail was not properly secured during the last trade transition. I've conducted an inspection of all temporary fall protection on the site and identified three other locations that need immediate attention. Please ensure all trades conduct a safety walk before starting work in new areas. We'll hold a safety stand-down meeting this Friday at 7:00 AM. Regards, Mark Thompson, Site Safety Manager",
+    "category": "General",
+    "summary": "A near miss safety incident was reported involving a loose guardrail, prompting a safety inspection and a scheduled safety stand-down meeting.",
+    "action_required": "Ensure all trades conduct a safety walk before starting work in new areas and prepare for the safety stand-down meeting.",
+    "priority": "High",
+    "due_date": "2023-10-27"
+  }
+]

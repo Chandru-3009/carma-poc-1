@@ -1,0 +1,63 @@
+[
+  {
+    "from": "hvac@subcontractor.com",
+    "subject": "Delay in AHU delivery",
+    "body": "The air handling unit shipment will arrive 2 days later due to customs delay. We apologize for the inconvenience and will expedite once released from customs."
+  },
+  {
+    "from": "project.manager@builder.com",
+    "subject": "Need clarification on door hardware spec",
+    "body": "Verify if Section 087100 allows for substitution of brand. The specified manufacturer's lead time is 12 weeks. Please advise ASAP."
+  },
+  {
+    "from": "safety.officer@construction.com",
+    "subject": "Weekly Safety Inspection Report - 4 violations found",
+    "body": "During today's inspection at Site B, we identified 4 safety violations including missing fall protection on Level 3 and improper scaffolding setup. Immediate action required."
+  },
+  {
+    "from": "plumbing@trade.com",
+    "subject": "RFI: Water meter installation location",
+    "body": "We need clarification on the exact mounting height for the commercial water meters in the mechanical room. Current drawings show conflicting measurements."
+  },
+  {
+    "from": "electrical@subcontractor.com",
+    "subject": "Submittal package for panelboards ready for review",
+    "body": "The complete submittal package for Panelboards A through D is ready for your review. Includes shop drawings, cut sheets, and test data. Due date: 5/15/2024."
+  },
+  {
+    "from": "materials@supplier.com",
+    "subject": "Concrete pour scheduled for tomorrow delayed",
+    "body": "The scheduled concrete pour for the foundation slab on 4/10/2024 has been postponed due to adverse weather conditions. New target date: 4/12/2024."
+  },
+  {
+    "from": "architect@firm.com",
+    "subject": "Revised drawing set issued - Version 2.1",
+    "body": "Please note that drawing set Version 2.1 has been issued with updated dimensions for the elevator shaft. All trades must download and review before proceeding with installations."
+  },
+  {
+    "from": "coordinates@field.com",
+    "subject": "Coordination meeting for mechanical systems scheduled",
+    "body": "Emergency coordination meeting scheduled for Friday 2pm to address MEP conflicts detected in the BIM model. All trade foremen attendance mandatory."
+  },
+  {
+    "from": "inventory@warehouse.com",
+    "subject": "Low stock alert: Rebar #4 scheduled for next phase",
+    "body": "Current inventory of #4 rebar is below minimum threshold. We need to reorder immediately to avoid delay on the next foundation phase starting next week."
+  },
+  {
+    "from": "permits@municipal.gov",
+    "subject": "Building permit inspection scheduled",
+    "body": "Your building permit inspection for plumbing rough-in has been scheduled for Monday, April 15th at 9:00 AM. Please ensure all plumbing fixtures are properly installed and accessible."
+  },
+  {
+    "from": "waste@disposal.com",
+    "subject": "Debris removal complete for Phase 1",
+    "body": "All construction debris from Phase 1 has been removed and disposed of properly. Certificate of disposal has been uploaded to the project portal."
+  },
+  {
+    "from": "project.director@builder.com",
+    "subject": "Site walk scheduled with owner next Tuesday",
+    "body": "Please prepare the site for the owner walkthrough on Tuesday at 2:00 PM. Owner wants to see progress on the lobby area and verify finish selections."
+  }
+]
+

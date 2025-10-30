@@ -1,0 +1,33 @@
+[
+  {
+    "from": "hvac@subcontractor.com",
+    "subject": "Delay in AHU delivery",
+    "body": "The air handling unit shipment will arrive 2 days later due to customs delay. We apologize for the inconvenience and will expedite once released from customs."
+  },
+  {
+    "from": "project.manager@builder.com",
+    "subject": "Weekly Progress Report - Week 34",
+    "body": "Electrical and HVAC rough-ins complete on Level 3. Fire protection systems installation starting next week. Schedule is on track with 85% completion."
+  },
+  {
+    "from": "engineer@consultant.com",
+    "subject": "RFI #202 Clarification on Fire Damper",
+    "body": "Please confirm if the fire damper should be UL-rated per Section 233100. Current drawings show conflicting specifications."
+  },
+  {
+    "from": "materials@supplier.com",
+    "subject": "Glass curtain wall panels ready for delivery",
+    "body": "All curtain wall panels for the south facade are ready. Delivery scheduled for next Monday, October 30th at 7 AM."
+  },
+  {
+    "from": "safety.officer@construction.com",
+    "subject": "Safety Inspection - 2 violations on Level 8",
+    "body": "Safety inspection found 2 violations: missing handrails on temporary stairs and improper storage of materials. Please address immediately."
+  },
+  {
+    "from": "architect@firm.com",
+    "subject": "Revised drawing set - Version 3.2 for lobby area",
+    "body": "Updated lobby area drawings issued. Key changes include revised ceiling heights and updated material specifications per client request."
+  }
+]
+

@@ -1,0 +1,56 @@
+[
+  {
+    "from": "structural@engineer.com",
+    "subject": "Tunnel boring machine maintenance scheduled",
+    "category": "Schedule Update",
+    "summary": "Scheduled maintenance for the tunnel boring machine (TBM) from Nov 10-12 will pause excavation for Section B-3, resulting in a 2-day delay.",
+    "action_required": "Notify relevant teams about the maintenance schedule and adjust project timelines accordingly.",
+    "priority": "High",
+    "due_date": "2023-11-10"
+  },
+  {
+    "from": "safety.officer@construction.com",
+    "subject": "Safety protocol violation - improper venting",
+    "category": "General",
+    "summary": "Inspector noted improper ventilation setup in tunnel section, requiring immediate correction before work can resume. A safety meeting is scheduled for tomorrow.",
+    "action_required": "Correct the improper ventilation setup before work can resume.",
+    "priority": "High",
+    "due_date": ""
+  },
+  {
+    "from": "materials@supplier.com",
+    "subject": "Reinforcing steel delivery confirmed",
+    "category": "Schedule Update",
+    "summary": "All reinforcing steel for Section B-4 tunnel lining has been delivered and staged. It is ready for placement starting Monday morning.",
+    "action_required": "Prepare for placement of reinforcing steel on Monday.",
+    "priority": "High",
+    "due_date": ""
+  },
+  {
+    "from": "coordinator@field.com",
+    "subject": "Utility relocation conflict detected",
+    "category": "Coordination",
+    "summary": "A conflict has been detected between the existing 12-inch water main and the planned tunnel alignment.",
+    "action_required": "Schedule a coordination meeting with the city utilities department.",
+    "priority": "High",
+    "due_date": ""
+  },
+  {
+    "from": "geotechnical@consultant.com",
+    "subject": "Soil stability report - Section B-5",
+    "category": "General",
+    "summary": "Geotechnical analysis for Section B-5 is complete, confirming that soil conditions are suitable for planned excavation. The report has been uploaded to the project portal.",
+    "action_required": "Review the uploaded soil stability report on the project portal.",
+    "priority": "Medium",
+    "due_date": ""
+  },
+  {
+    "from": "project.manager@builder.com",
+    "subject": "Weekly progress - Section B ahead of schedule",
+    "category": "Schedule Update",
+    "summary": "Section B is 72% complete and is 5 days ahead of schedule. Tunneling operations are running smoothly, with the next milestone being the Section B-6 breakthrough expected next week.",
+    "action_required": "Continue monitoring progress and prepare for the Section B-6 breakthrough next week.",
+    "priority": "Medium",
+    "due_date": ""
+  }
+]
