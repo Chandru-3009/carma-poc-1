@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import RoleSelect from './pages/RoleSelect';
 import ProjectSelect from './pages/ProjectSelect';
 import InboxSummary from './pages/InboxSummary';
+import Dashboard from './pages/Dashboard';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route path="/role" element={<RoleSelect />} />
         <Route path="/projects" element={<ProjectSelect />} />
         <Route path="/inbox/:projectName" element={<InboxSummary />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </Router>
   );

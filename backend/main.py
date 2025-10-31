@@ -23,7 +23,7 @@ app.add_middleware(
 )
 
 # OpenAI client
-openai_client = OpenAI(api_key="")
+openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # Enhanced AI prompt for classification and summarization
 SYSTEM_PROMPT = """You are an AI assistant for a construction project management system.
@@ -508,6 +508,24 @@ async def send_email(request: SendEmailRequest):
         
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed to send email: {str(e)}")
+
+
+@app.get("/api/non-responsive-subcontractors")
+async def get_non_responsive_subcontractors(project: Optional[str] = None):
+    """Get non-responsive subcontractors data"""
+    data_file = DATA_DIR / "non_responsive_subcontractors.json"
+    
+    if not data_file.exists():
+        return []
+    
+    with open(data_file, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    
+    # Filter by project if specified
+    if project:
+        data = [item for item in data if item.get("project_guess", "").lower() == project.lower()]
+    
+    return data
 
 
 @app.get("/health")

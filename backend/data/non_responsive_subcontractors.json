@@ -1,0 +1,36 @@
+[
+    {
+        "thread_subject": "Ship Date Needed for Penthouse A Custom Casework",
+        "project_guess": "Penthouse A",
+        "participants": {
+            "from_domain": "carma-build.com",
+            "to_domain": "",
+            "senders": [
+                "schandruu.subramani@gmail.com"
+            ],
+            "receivers": [
+                "schandruu.subramani@gmail.com"
+            ]
+        },
+        "counts": {
+            "total_emails": 3,
+            "follow_up_count": 3,
+            "unanswered_emails": 3
+        },
+        "timeline": {
+            "first_email_date": "2025-10-30",
+            "last_email_date": "2025-10-30",
+            "days_between_first_and_last": 0
+        },
+        "response_detected": false,
+        "issue_detected": "Non-responsive recipient",
+        "impact_area": "Procurement/Schedule",
+        "risk_level": "HIGH",
+        "reason": "Multiple follow-ups with no reply from recipient; potential delay in schedule.",
+        "recommended_action": "Escalate to project management and ensure timely response.",
+        "kpis": {
+            "avg_gap_days": 0.0,
+            "last_gap_days": 0.0
+        }
+    }
+]
