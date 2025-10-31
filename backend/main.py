@@ -50,6 +50,24 @@ async def root():
     }
 
 
+@app.get("/api/non-responsive-subcontractors")
+async def get_non_responsive_subcontractors(project: Optional[str] = None):
+    """Get non-responsive subcontractors data"""
+    data_file = DATA_DIR / "non_responsive_subcontractors.json"
+    
+    if not data_file.exists():
+        return []
+    
+    with open(data_file, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    
+    # Filter by project if specified
+    if project:
+        data = [item for item in data if item.get("project_guess", "").lower() == project.lower()]
+    
+    return data
+
+
 @app.get("/health")
 async def health_check():
     """Health check endpoint"""
