@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import Sidebar from '../components/Sidebar.jsx';
 import TopBar from '../components/TopBar.jsx';
-import ProjectSelection from '../components/ProjectSelection.jsx';
 import ProjectStatusPie from '../components/ProjectStatusPie.jsx';
 import EmailFollowupsCard from '../components/EmailFollowupsCard.jsx';
 import ClientDelayTimeCard from '../components/ClientDelayTimeCard.jsx';
@@ -13,14 +12,12 @@ function Dashboard() {
 
   useEffect(() => {
     const loadData = async () => {
-      if (!project) {
-        setNonResponsiveData([]);
-        return;
-      }
-      
       setLoading(true);
       try {
-        const res = await fetch(`http://localhost:5000/api/non-responsive-subcontractors?project=${encodeURIComponent(project)}`);
+        const url = project
+          ? `http://localhost:5000/api/non-responsive-subcontractors?project=${encodeURIComponent(project)}`
+          : 'http://localhost:5000/api/non-responsive-subcontractors';
+        const res = await fetch(url);
         const data = await res.json();
         setNonResponsiveData(data || []);
       } catch (e) {
@@ -54,58 +51,33 @@ function Dashboard() {
               <p className="text-gray-600 mt-1">Project health and procurement risk overview</p>
             </div>
 
-            {/* Main Content: Two Column Layout */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              {/* Left Column: Project Selection */}
-              <div className="lg:col-span-1">
-                <ProjectSelection selectedProject={project} onSelectProject={setProject} />
+            {/* Main Content: Summary Capsule matching wireframe */}
+            <div className="bg-white rounded-3xl border border-gray-200 shadow-sm p-6">
+              <h2 className="text-base font-semibold text-gray-800 mb-5">Selected Project Summary</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="md:col-span-1">
+                  <ProjectStatusPie data={projectStatus} />
+                </div>
+                <div className="md:col-span-1">
+                  <EmailFollowupsCard data={nonResponsiveData} />
+                </div>
+                <div className="md:col-span-1">
+                  <ClientDelayTimeCard data={nonResponsiveData} />
+                </div>
               </div>
 
-              {/* Right Column: Selected Project Summary */}
-              <div className="lg:col-span-2">
-                {project ? (
-                  <div>
-                    <h2 className="text-lg font-semibold text-gray-800 mb-4">Selected Project Summary</h2>
-                    
-                    {/* Three Cards in Horizontal Layout */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                      {/* Project Status Pie Chart */}
-                      <div className="md:col-span-1">
-                        <ProjectStatusPie data={projectStatus} />
-                      </div>
+              {loading && (
+                <div className="mt-4 text-center py-4">
+                  <div className="inline-block animate-spin rounded-full h-6 w-6 border-b-2 border-blue-600"></div>
+                  <p className="text-sm text-gray-500 mt-2">Loading data...</p>
+                </div>
+              )}
 
-                      {/* Email Followups Card */}
-                      <div className="md:col-span-1">
-                        <EmailFollowupsCard data={nonResponsiveData} />
-                      </div>
-
-                      {/* Client Delay Time Card */}
-                      <div className="md:col-span-1">
-                        <ClientDelayTimeCard data={nonResponsiveData} />
-                      </div>
-                    </div>
-
-                    {/* Loading State */}
-                    {loading && (
-                      <div className="mt-4 text-center py-4">
-                        <div className="inline-block animate-spin rounded-full h-6 w-6 border-b-2 border-blue-600"></div>
-                        <p className="text-sm text-gray-500 mt-2">Loading project data...</p>
-                      </div>
-                    )}
-
-                    {/* Empty State when no project selected */}
-                    {!loading && nonResponsiveData.length === 0 && project && (
-                      <div className="mt-4 p-6 bg-white rounded-xl border border-gray-200 shadow-sm text-center">
-                        <p className="text-sm text-gray-500">No non-responsive subcontractors found for this project.</p>
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-8 text-center">
-                    <p className="text-gray-500">Select a project from the left to view its summary</p>
-                  </div>
-                )}
-              </div>
+              {!loading && nonResponsiveData.length === 0 && (
+                <div className="mt-4 p-6 bg-gray-50 rounded-xl border border-dashed border-gray-300 text-center">
+                  <p className="text-sm text-gray-500">No non-responsive subcontractors found.</p>
+                </div>
+              )}
             </div>
           </div>
         </main>
