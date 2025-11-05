@@ -9,6 +9,7 @@ from routes import (
     projects,
     procurement,
     procurement_analyze,
+    procurement_from_emails,
     vendors,
     dashboard,
     auth
@@ -37,6 +38,7 @@ app.include_router(reports.router)
 app.include_router(projects.router)
 app.include_router(procurement.router)
 app.include_router(procurement_analyze.router)
+app.include_router(procurement_from_emails.router)
 app.include_router(vendors.router)
 app.include_router(dashboard.router)
 app.include_router(auth.router)
