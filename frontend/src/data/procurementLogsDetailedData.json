@@ -1,0 +1,115 @@
+[
+  {
+    "project_name": "Penthouse A",
+    "material_equipment": "Custom Casework",
+    "lead_time_days": 40,
+    "quantity": 5,
+    "unit": "Sets",
+    "vendor_name": "Elite Millwork",
+    "delivery_date": "Pending",
+    "status": "Pending",
+    "remarks": "Awaiting vendor confirmation on delivery date.",
+    "ai_analysis": {
+      "impact": "Schedule Risk – Missing delivery dates may delay interior fit-out progress.",
+      "recommendation": "Follow up with vendor immediately and escalate if no update within 2 days.",
+      "confidence_score": 0.87
+    }
+  },
+  {
+    "project_name": "Penthouse A",
+    "material_equipment": "Steel Frames",
+    "lead_time_days": 25,
+    "quantity": 12,
+    "unit": "Tons",
+    "vendor_name": "Steel Framing Inc.",
+    "delivery_date": "2025-11-14",
+    "status": "Confirmed",
+    "remarks": "Material dispatched, expected arrival within 10 days.",
+    "ai_analysis": {
+      "impact": "No major risk – Tracking on schedule.",
+      "recommendation": "Verify receipt upon delivery and update procurement tracker.",
+      "confidence_score": 0.96
+    }
+  },
+  {
+    "project_name": "Penthouse A",
+    "material_equipment": "HVAC Ducts",
+    "lead_time_days": 20,
+    "quantity": 8,
+    "unit": "Sets",
+    "vendor_name": "Climate Control Systems",
+    "delivery_date": "2025-11-10",
+    "status": "Confirmed",
+    "remarks": "Installation scheduled for next week.",
+    "ai_analysis": {
+      "impact": "No Risk – Delivery confirmed and on schedule.",
+      "recommendation": "Coordinate installation schedule with site team.",
+      "confidence_score": 0.94
+    }
+  },
+  {
+    "project_name": "Project Cascade",
+    "material_equipment": "Electrical Panels",
+    "lead_time_days": 30,
+    "quantity": 10,
+    "unit": "Sets",
+    "vendor_name": "Electric Supply Co.",
+    "delivery_date": "Pending",
+    "status": "Pending",
+    "remarks": "Awaiting final design approval before shipment.",
+    "ai_analysis": {
+      "impact": "Procurement Delay – Design dependency may affect site progress.",
+      "recommendation": "Coordinate with design team and confirm panel release schedule.",
+      "confidence_score": 0.82
+    }
+  },
+  {
+    "project_name": "Project Cascade",
+    "material_equipment": "Plumbing Fixtures",
+    "lead_time_days": 15,
+    "quantity": 25,
+    "unit": "Units",
+    "vendor_name": "AquaFlow Systems",
+    "delivery_date": "2025-11-08",
+    "status": "Confirmed",
+    "remarks": "Items ready for pickup.",
+    "ai_analysis": {
+      "impact": "No Risk – Ready for installation.",
+      "recommendation": "Schedule pickup and coordinate with plumbing contractor.",
+      "confidence_score": 0.91
+    }
+  },
+  {
+    "project_name": "Skyline Tower",
+    "material_equipment": "Glass Window Systems",
+    "lead_time_days": 20,
+    "quantity": 100,
+    "unit": "Units",
+    "vendor_name": "GlassTech Suppliers",
+    "delivery_date": "2025-11-18",
+    "status": "Confirmed",
+    "remarks": "Production complete, awaiting shipping confirmation.",
+    "ai_analysis": {
+      "impact": "No Risk – All details confirmed and verified.",
+      "recommendation": "Continue regular tracking; next update post-installation.",
+      "confidence_score": 0.98
+    }
+  },
+  {
+    "project_name": "Skyline Tower",
+    "material_equipment": "Structural Steel Beams",
+    "lead_time_days": 35,
+    "quantity": 50,
+    "unit": "Tons",
+    "vendor_name": "Steel Framing Inc.",
+    "delivery_date": "Pending",
+    "status": "Pending",
+    "remarks": "Fabrication delay due to material shortage.",
+    "ai_analysis": {
+      "impact": "High Risk – Structural delay may impact overall project timeline.",
+      "recommendation": "Escalate immediately to project manager; consider alternative supplier.",
+      "confidence_score": 0.89
+    }
+  }
+]
+
