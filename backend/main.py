@@ -1,6 +1,7 @@
 """Main FastAPI application"""
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from services.config import DATA_DIR
 from routes import (
     emails,
     emails_with_attachments,
@@ -12,6 +13,7 @@ from routes import (
     dashboard,
     auth
 )
+import json
 
 app = FastAPI(
     title="CARMA AI Backend",
@@ -51,7 +53,7 @@ async def root():
 
 
 @app.get("/api/non-responsive-subcontractors")
-async def get_non_responsive_subcontractors(project: Optional[str] = None):
+async def get_non_responsive_subcontractors():
     """Get non-responsive subcontractors data"""
     data_file = DATA_DIR / "non_responsive_subcontractors.json"
     
@@ -62,8 +64,9 @@ async def get_non_responsive_subcontractors(project: Optional[str] = None):
         data = json.load(f)
     
     # Filter by project if specified
-    if project:
-        data = [item for item in data if item.get("project_guess", "").lower() == project.lower()]
+    # project: Optional[str] = None
+    # if project:
+    #     data = [item for item in data if item.get("project_guess", "").lower() == project.lower()]
     
     return data
 

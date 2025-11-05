@@ -1,0 +1,27 @@
+[
+  {
+    "email": "chandru@gmail.com",
+    "role": "Project Manager"
+  },
+  {
+    "email": "chandru-pm@carma.com",
+    "role": "Project Manager"
+  },
+  {
+    "email": "james@gmail.com",
+    "role": "Project Engineer"
+  },
+  {
+    "email": "mike@carma.com",
+    "role": "Supervisor"
+  },
+  {
+    "email": "mike-supervisor@carma.com",
+    "role": "Supervisor"
+  },
+  {
+    "email": "supervisor.phoenix@carma-build.com",
+    "role": "Supervisor"
+  }
+]
+

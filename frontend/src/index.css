@@ -19,13 +19,19 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html, body, #root {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
 body {
-  margin: 0;
   min-height: 100vh;
 }
 
 #root {
-  width: 100%;
   min-height: 100vh;
 }
 
@@ -97,5 +103,26 @@ select option:hover {
 .custom-scrollbar {
   scrollbar-width: thin;
   scrollbar-color: #d1d5db #f9fafb;
+}
+
+/* Dark theme scrollbar styling for CARMA luxury theme */
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #0D0F12; /* dark background */
+  border-radius: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #C9A94A; /* gold accent */
+  border-radius: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #E0C870; /* lighter gold on hover */
+}
+
+/* For Firefox dark theme */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #C9A94A #0D0F12;
 }
 

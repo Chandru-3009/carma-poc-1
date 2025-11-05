@@ -1,0 +1,73 @@
+[
+  {
+    "project_name": "Penthouse A",
+    "vendor": "Elite Millwork",
+    "attachment_summary": "casework_material_log.xlsx",
+    "expected_fields": ["PO Number", "Delivery Date", "Material Type", "Quantity", "Status"],
+    "found_fields": ["PO Number", "Material Type", "Quantity"],
+    "missing_fields": ["Delivery Date", "Status"],
+    "ai_analysis": {
+      "impact": "Schedule Risk – Missing delivery dates may delay interior fit-out.",
+      "recommendation": "Follow up with procurement team or vendor for updated delivery timeline.",
+      "confidence_score": 0.91
+    },
+    "last_updated": "2025-11-04"
+  },
+  {
+    "project_name": "Project Cascade",
+    "vendor": "Electric Supply Co.",
+    "attachment_summary": "electrical_panel_log.xlsx",
+    "expected_fields": ["PO Number", "Approval Date", "Dispatch Date", "Status"],
+    "found_fields": ["PO Number", "Approval Date"],
+    "missing_fields": ["Dispatch Date", "Status"],
+    "ai_analysis": {
+      "impact": "Procurement Delay – Missing dispatch confirmation may impact installation schedule.",
+      "recommendation": "Escalate to design lead; verify if approval delays are blocking dispatch.",
+      "confidence_score": 0.88
+    },
+    "last_updated": "2025-11-03"
+  },
+  {
+    "project_name": "Skyline Tower",
+    "vendor": "GlassTech Suppliers",
+    "attachment_summary": "window_frame_log.xlsx",
+    "expected_fields": ["PO Number", "Dispatch Date", "Status"],
+    "found_fields": ["PO Number", "Dispatch Date", "Status"],
+    "missing_fields": [],
+    "ai_analysis": {
+      "impact": "No Risk – All required fields found.",
+      "recommendation": "No action needed. Continue regular tracking.",
+      "confidence_score": 1.00
+    },
+    "last_updated": "2025-11-02"
+  },
+  {
+    "project_name": "Penthouse A",
+    "vendor": "Steel Framing Inc.",
+    "attachment_summary": "structural_steel_log.xlsx",
+    "expected_fields": ["PO Number", "Delivery Date", "Quantity", "Status"],
+    "found_fields": ["PO Number", "Quantity"],
+    "missing_fields": ["Delivery Date", "Status"],
+    "ai_analysis": {
+      "impact": "Schedule Risk – Missing delivery dates may delay structural installation.",
+      "recommendation": "Contact vendor immediately for delivery timeline update.",
+      "confidence_score": 0.85
+    },
+    "last_updated": "2025-11-04"
+  },
+  {
+    "project_name": "Project Cascade",
+    "vendor": "HVAC Solutions LLC",
+    "attachment_summary": "hvac_equipment_log.xlsx",
+    "expected_fields": ["PO Number", "Delivery Date", "Installation Date", "Status"],
+    "found_fields": ["PO Number", "Delivery Date", "Installation Date", "Status"],
+    "missing_fields": [],
+    "ai_analysis": {
+      "impact": "No Risk – All required fields found.",
+      "recommendation": "No action needed. Continue regular tracking.",
+      "confidence_score": 0.95
+    },
+    "last_updated": "2025-11-03"
+  }
+]
+

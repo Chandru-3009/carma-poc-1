@@ -1,0 +1,60 @@
+[
+  {
+    "project_name": "Penthouse A",
+    "week_range": "Oct 21 – Oct 27, 2025",
+    "progress_percent": 82,
+    "status": "Minor Delay",
+    "overview": "Interior fit-out nearing completion. Electrical installation started; millwork shipment confirmed.",
+    "achievements": [
+      "Floor framing completed on L3",
+      "HVAC ducts installed (core zones)",
+      "Casework shipment confirmed by Elite Millwork"
+    ],
+    "pending_issues": [
+      "Awaiting electrical panel delivery confirmation"
+    ],
+    "next_week_plan": [
+      "Begin tile works on L2",
+      "Perform MEP quality inspection (core zones)"
+    ],
+    "confidence_score": 91
+  },
+  {
+    "project_name": "Project Cascade",
+    "week_range": "Oct 21 – Oct 27, 2025",
+    "progress_percent": 68,
+    "status": "On Track",
+    "overview": "Structure and MEP progressing steadily. Vendor coordination improved this week.",
+    "achievements": [
+      "Second floor slab completed",
+      "Procurement delay cleared for panels"
+    ],
+    "pending_issues": [
+      "Awaiting revised plumbing schematic (L1 bathrooms)"
+    ],
+    "next_week_plan": [
+      "Start electrical conduit installation L2",
+      "Finalize glazing design with consultant"
+    ],
+    "confidence_score": 88
+  },
+  {
+    "project_name": "Skyline Tower",
+    "week_range": "Oct 21 – Oct 27, 2025",
+    "progress_percent": 75,
+    "status": "On Track",
+    "overview": "Structural work progressing well. Window installation on schedule with all materials delivered.",
+    "achievements": [
+      "Third floor structure completed",
+      "Window frames installed (floors 1-3)",
+      "Foundation inspection passed"
+    ],
+    "pending_issues": [],
+    "next_week_plan": [
+      "Continue window installation (floors 4-6)",
+      "Begin interior drywall installation"
+    ],
+    "confidence_score": 93
+  }
+]
+

@@ -19,7 +19,7 @@ function ProjectSelect() {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
-  const selectedRole = localStorage.getItem('selectedRole') || 'User';
+  const selectedRole = localStorage.getItem('userRole') || localStorage.getItem('selectedRole') || 'User';
 
   useEffect(() => {
     fetchProjects();
@@ -56,9 +56,17 @@ function ProjectSelect() {
 
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">
-            Select a Project
-          </h1>
+          <div className="flex items-center justify-between mb-2">
+            <h1 className="text-3xl font-bold text-gray-900">
+              Select a Project
+            </h1>
+            <button
+              onClick={() => navigate('/aidashboard')}
+              className="px-5 py-2.5 bg-blue-600 text-white rounded-lg shadow-sm hover:bg-blue-700 transition font-medium text-sm"
+            >
+              Go to AI Dashboard →
+            </button>
+          </div>
           <p className="text-gray-600 mt-1 mb-8">
             Welcome, <span className="font-medium text-blue-600">{selectedRole}</span>
           </p>

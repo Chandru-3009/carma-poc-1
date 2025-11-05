@@ -1,0 +1,178 @@
+[
+  {
+    "thread_subject": "Ship Date Needed for Penthouse A Custom Casework",
+    "project_guess": "Penthouse A",
+    "participants": {
+      "from_domain": "carma.com",
+      "to_domain": "elitemillwork.com",
+      "senders": ["mike-supervisor@carma.com"],
+      "receivers": ["david@elitemillwork.com"]
+    },
+    "counts": {
+      "total_emails": 4,
+      "follow_up_count": 3,
+      "unanswered_emails": 1
+    },
+    "timeline": {
+      "first_email_date": "2025-10-25",
+      "last_email_date": "2025-10-31",
+      "days_between_first_and_last": 6
+    },
+    "response_detected": false,
+    "issue_detected": "Non-responsive subcontractor",
+    "impact_area": "Procurement/Schedule",
+    "risk_level": "HIGH",
+    "reason": "Multiple follow-ups with no reply from vendor; possible delay.",
+    "recommended_action": "Escalate to Project Manager for decision on alternate vendor or penalty notice.",
+    "kpis": {
+      "avg_gap_days": 2.0,
+      "last_gap_days": 3.0
+    },
+    "conversation_history": [
+      {
+        "date": "2025-10-25",
+        "from": "mike-supervisor@carma.com",
+        "to": "david@elitemillwork.com",
+        "subject": "Ship Date Needed for Penthouse A Custom Casework",
+        "body": "Hi David, could you please confirm the ship date for the custom casework? We need this information to update our project schedule.",
+        "type": "initial"
+      },
+      {
+        "date": "2025-10-27",
+        "from": "mike-supervisor@carma.com",
+        "to": "david@elitemillwork.com",
+        "subject": "Follow-Up: Ship Date Needed for Penthouse A Custom Casework",
+        "body": "Following up on my earlier message. Could you please provide the confirmed ship date for the casework?",
+        "type": "follow-up"
+      },
+      {
+        "date": "2025-10-29",
+        "from": "mike-supervisor@carma.com",
+        "to": "david@elitemillwork.com",
+        "subject": "Second Reminder: Ship Date Confirmation Pending",
+        "body": "This is our second follow-up regarding the casework shipment. Please respond as soon as possible to avoid project delay.",
+        "type": "follow-up"
+      },
+      {
+        "date": "2025-10-31",
+        "from": "mike-supervisor@carma.com",
+        "to": "chandru-pm@carma.com",
+        "subject": "Escalation – Vendor Non-Response on Penthouse A Casework",
+        "body": "Hi Chandru, despite three follow-ups, we have not received any response from Elite Millwork regarding the ship date for Penthouse A custom casework. This delay may affect the procurement schedule. Please review and advise on escalation or alternative vendor action.",
+        "type": "escalation"
+      }
+    ]
+  },
+  {
+    "thread_subject": "HVAC Duct Delivery Timeline Confirmation",
+    "project_guess": "Project Phoenix",
+    "participants": {
+      "from_domain": "carma-build.com",
+      "to_domain": "hvac-supply.com",
+      "senders": ["supervisor.phoenix@carma-build.com"],
+      "receivers": ["logistics@hvac-supply.com"]
+    },
+    "counts": {
+      "total_emails": 3,
+      "follow_up_count": 2,
+      "unanswered_emails": 2
+    },
+    "timeline": {
+      "first_email_date": "2025-10-28",
+      "last_email_date": "2025-11-02",
+      "days_between_first_and_last": 5
+    },
+    "response_detected": false,
+    "issue_detected": "Delivery confirmation overdue",
+    "impact_area": "Material Delivery",
+    "risk_level": "MEDIUM",
+    "reason": "Awaiting delivery timeline confirmation for critical HVAC materials.",
+    "recommended_action": "Escalate to Project Manager to determine alternate supply source or delay notification.",
+    "kpis": {
+      "avg_gap_days": 1.5,
+      "last_gap_days": 3.0
+    },
+    "conversation_history": [
+      {
+        "date": "2025-10-28",
+        "from": "supervisor.phoenix@carma-build.com",
+        "to": "logistics@hvac-supply.com",
+        "subject": "HVAC Duct Delivery Timeline Confirmation",
+        "body": "Hi Team, could you please confirm the expected delivery date for the HVAC ducts? This is critical for our installation plan.",
+        "type": "initial"
+      },
+      {
+        "date": "2025-10-30",
+        "from": "supervisor.phoenix@carma-build.com",
+        "to": "logistics@hvac-supply.com",
+        "subject": "Follow-Up: HVAC Duct Delivery Timeline Confirmation",
+        "body": "Following up on my previous email. We have not yet received a confirmation for the delivery schedule.",
+        "type": "follow-up"
+      },
+      {
+        "date": "2025-11-02",
+        "from": "supervisor.phoenix@carma-build.com",
+        "to": "chandru-pm@carma.com",
+        "subject": "Escalation – No Response from HVAC Supplier for Project Phoenix",
+        "body": "Hi Chandru, the HVAC supplier has not confirmed the duct delivery timeline after multiple follow-ups. Please review the situation and guide if we should initiate escalation to vendor management or source from a backup supplier.",
+        "type": "escalation"
+      }
+    ]
+  },
+  {
+    "thread_subject": "Electrical Panel Approval Status",
+    "project_guess": "Project Cascade",
+    "participants": {
+      "from_domain": "carma-build.com",
+      "to_domain": "electric-supply.com",
+      "senders": ["supervisor.cascade@carma-build.com"],
+      "receivers": ["support@electric-supply.com"]
+    },
+    "counts": {
+      "total_emails": 3,
+      "follow_up_count": 2,
+      "unanswered_emails": 2
+    },
+    "timeline": {
+      "first_email_date": "2025-10-29",
+      "last_email_date": "2025-11-01",
+      "days_between_first_and_last": 3
+    },
+    "response_detected": false,
+    "issue_detected": "Approval pending",
+    "impact_area": "Design/Approval",
+    "risk_level": "HIGH",
+    "reason": "Critical design approval required before installation can proceed.",
+    "recommended_action": "Escalate to Project Manager to expedite design team coordination.",
+    "kpis": {
+      "avg_gap_days": 1.0,
+      "last_gap_days": 2.0
+    },
+    "conversation_history": [
+      {
+        "date": "2025-10-29",
+        "from": "supervisor.cascade@carma-build.com",
+        "to": "support@electric-supply.com",
+        "subject": "Electrical Panel Approval Status",
+        "body": "Hi, could you please share the status of the electrical panel design approval? We need this to proceed with fabrication.",
+        "type": "initial"
+      },
+      {
+        "date": "2025-10-30",
+        "from": "supervisor.cascade@carma-build.com",
+        "to": "support@electric-supply.com",
+        "subject": "Follow-Up: Electrical Panel Approval Status",
+        "body": "Just checking if the approval has been issued. We are nearing the installation date and need your confirmation.",
+        "type": "follow-up"
+      },
+      {
+        "date": "2025-11-01",
+        "from": "supervisor.cascade@carma-build.com",
+        "to": "chandru-pm@carma.com",
+        "subject": "Escalation – Electrical Panel Approval Delayed in Project Cascade",
+        "body": "Hi Chandru, the vendor has not approved the electrical panel design yet despite follow-ups. This is now blocking the installation. Please advise on expediting or alternate approval workflow.",
+        "type": "escalation"
+      }
+    ]
+  }
+]

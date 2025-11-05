@@ -3,6 +3,7 @@ import RoleSelect from './pages/RoleSelect';
 import ProjectSelect from './pages/ProjectSelect';
 import InboxSummary from './pages/InboxSummary';
 import Dashboard from './pages/Dashboard';
+import AIDashboard from './pages/AIDashboard';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/projects" element={<ProjectSelect />} />
         <Route path="/inbox/:projectName" element={<InboxSummary />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/aidashboard" element={<AIDashboard />} />
       </Routes>
     </Router>
   );
