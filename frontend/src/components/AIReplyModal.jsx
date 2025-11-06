@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 export default function AIReplyModal({ isOpen, onClose, aiReply, onSend }) {
+  console.log("------>aiReply",aiReply);
   const [manualText, setManualText] = useState(aiReply?.body || "");
 
   useEffect(() => {

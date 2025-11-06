@@ -81,15 +81,39 @@ def _analyze_email_with_ai(email: dict) -> dict:
         "Return JSON only. No markdown."
     )
 
-    response = openai_client.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=[
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": user_prompt}
-        ],
-        temperature=0.2,
-        max_tokens=600
-    )
+    try:
+        response = openai_client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_prompt}
+            ],
+            temperature=0.2,
+            max_tokens=600
+        )
+    except Exception as e:
+        error_msg = str(e)
+        # Check for permission/scope errors
+        if "401" in error_msg or "insufficient permissions" in error_msg.lower() or "missing scopes" in error_msg.lower():
+            raise HTTPException(
+                status_code=401,
+                detail=(
+                    "OpenAI API Key Permissions Error:\n\n"
+                    "Your API key doesn't have the required permissions (missing scope: model.request).\n\n"
+                    "To fix this:\n"
+                    "1. Go to https://platform.openai.com/api-keys\n"
+                    "2. If using a restricted API key, ensure it has 'model.request' scope enabled\n"
+                    "3. If your API key belongs to an organization, ensure you have 'Reader', 'Writer', or 'Owner' role\n"
+                    "4. If your API key belongs to a project, ensure you have 'Member' or 'Owner' role\n"
+                    "5. Alternatively, create a new unrestricted API key for testing\n\n"
+                    f"Original error: {error_msg}"
+                )
+            )
+        # Re-raise other errors
+        raise HTTPException(
+            status_code=500,
+            detail=f"OpenAI API Error: {error_msg}"
+        )
 
     ai_text = response.choices[0].message.content or "{}"
 

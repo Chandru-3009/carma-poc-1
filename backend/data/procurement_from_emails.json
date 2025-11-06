@@ -1,0 +1,382 @@
+[
+  {
+    "id": "19a53dbbe946094b",
+    "from": "no-reply@accounts.google.com",
+    "subject": "Security alert",
+    "date": "Wed, 05 Nov 2025 11:51:40 GMT",
+    "project_name": "Pending",
+    "material_equipment": "Pending",
+    "lead_time_days": 0,
+    "quantity": 0,
+    "unit": "Pending",
+    "vendor_name": "Pending",
+    "delivery_date": "Pending",
+    "status": "Pending",
+    "remarks": "No procurement details available in the email.",
+    "ai_analysis": {
+      "impact": "No impact on procurement as the email does not relate to a construction project.",
+      "recommendation": "Monitor for relevant procurement emails.",
+      "confidence_score": 0.0
+    }
+  },
+  {
+    "id": "19a53898f0165693",
+    "from": "yasir.araphat@techjays.com",
+    "subject": "Update Required – Custom Casework Shipment for Penthouse A",
+    "date": "Wed, 5 Nov 2025 16:21:43 +0600",
+    "project_name": "Penthouse A",
+    "material_equipment": "Custom Casework",
+    "lead_time_days": 40,
+    "quantity": 5,
+    "unit": "Sets",
+    "vendor_name": "Elite Millwork",
+    "delivery_date": "Pending",
+    "status": "Awaiting material receipt",
+    "remarks": "We’ll confirm the final delivery date once the pending materials arrive this week.",
+    "ai_analysis": {
+      "impact": "Schedule Risk - Missing delivery dates may delay interior fit-out progress.",
+      "recommendation": "Follow up with vendor immediately and escalate if no update within 2 days.",
+      "confidence_score": 0.87
+    }
+  },
+  {
+    "id": "19a53fbf82f67a79",
+    "from": "chandru.subramani@techjays.com",
+    "subject": "Electrical Panel Shipment Pending – Project Cascade",
+    "date": "Wed, 5 Nov 2025 17:56:41 +0530",
+    "project_name": "Project Cascade",
+    "material_equipment": "Electrical Panels",
+    "lead_time_days": 30,
+    "quantity": 10,
+    "unit": "Sets",
+    "vendor_name": "Electric Supply Co.",
+    "delivery_date": "Pending",
+    "status": "On hold",
+    "remarks": "Awaiting final design approval for the electrical panels.",
+    "ai_analysis": {
+      "impact": "Schedule Risk - Missing design approval may delay production and dispatch of electrical panels.",
+      "recommendation": "Follow up with design team for approval to avoid further delays.",
+      "confidence_score": 0.85
+    }
+  },
+  {
+    "id": "19a53fb318600e35",
+    "from": "chandru.subramani@techjays.com",
+    "subject": "Delivery Confirmation – HVAC Ducts for Penthouse A",
+    "date": "Wed, 5 Nov 2025 17:55:49 +0530",
+    "project_name": "Penthouse A",
+    "material_equipment": "HVAC Ducts",
+    "lead_time_days": 20,
+    "quantity": 8,
+    "unit": "Sets",
+    "vendor_name": "Climate Control Systems",
+    "delivery_date": "November 10, 2025",
+    "status": "Delivered",
+    "remarks": "Installation can begin as planned next week.",
+    "ai_analysis": {
+      "impact": "Schedule Risk - Delivery confirmed, installation can proceed as planned.",
+      "recommendation": "Confirm receipt of materials and ensure installation team is ready.",
+      "confidence_score": 0.95
+    }
+  },
+  {
+    "id": "19a53fa5d47746c7",
+    "from": "chandru.subramani@techjays.com",
+    "subject": "Dispatch Confirmation – Steel Frames for Penthouse A",
+    "date": "Wed, 5 Nov 2025 17:54:55 +0530",
+    "project_name": "Penthouse A",
+    "material_equipment": "Steel Frames",
+    "lead_time_days": 25,
+    "quantity": 12,
+    "unit": "tons",
+    "vendor_name": "Steel Framing Inc.",
+    "delivery_date": "November 14, 2025",
+    "status": "Confirmed",
+    "remarks": "Tracking details will be shared tomorrow.",
+    "ai_analysis": {
+      "impact": "Schedule Risk - Missing delivery dates may delay project timelines.",
+      "recommendation": "Monitor tracking details closely and prepare for site arrival.",
+      "confidence_score": 0.92
+    }
+  },
+  {
+    "id": "19a54104dad0839d",
+    "from": "chandru.subramani@techjays.com",
+    "subject": "Fabrication Delay – Structural Steel Beams for Skyline Tower",
+    "date": "Wed, 5 Nov 2025 18:18:52 +0530",
+    "project_name": "Skyline Tower",
+    "material_equipment": "Structural Steel Beams",
+    "lead_time_days": 7,
+    "quantity": 50,
+    "unit": "Tons",
+    "vendor_name": "Steel Framing Inc.",
+    "delivery_date": "Pending",
+    "status": "Delayed",
+    "remarks": "Fabrication temporarily halted; revised delivery timeline to follow.",
+    "ai_analysis": {
+      "impact": "Schedule Risk - Missing delivery dates may delay project timelines.",
+      "recommendation": "Coordinate closely with supplier for updates and communicate any changes to the project team.",
+      "confidence_score": 0.85
+    }
+  },
+  {
+    "id": "19a540fb2a2ff3f6",
+    "from": "chandru.subramani@techjays.com",
+    "subject": "Production Complete – Glass Window Systems for Skyline Tower",
+    "date": "Wed, 5 Nov 2025 18:18:14 +0530",
+    "project_name": "Skyline Tower",
+    "material_equipment": "Glass Window Systems",
+    "lead_time_days": 0,
+    "quantity": 100,
+    "unit": "Units",
+    "vendor_name": "GlassTech Suppliers",
+    "delivery_date": "18-Nov-2025",
+    "status": "Confirmed",
+    "remarks": "Awaiting final freight confirmation before shipment.",
+    "ai_analysis": {
+      "impact": "Schedule Risk - Missing final freight confirmation may delay shipment.",
+      "recommendation": "Confirm freight arrangements with the vendor to ensure timely dispatch.",
+      "confidence_score": 0.85
+    }
+  },
+  {
+    "id": "19a540f34ce3e09a",
+    "from": "chandru.subramani@techjays.com",
+    "subject": "Plumbing Fixtures Ready for Pickup – Project Cascade",
+    "date": "Wed, 5 Nov 2025 18:17:42 +0530",
+    "project_name": "Project Cascade",
+    "material_equipment": "Plumbing Fixtures",
+    "lead_time_days": 0,
+    "quantity": 25,
+    "unit": "Units",
+    "vendor_name": "AquaFlow Systems",
+    "delivery_date": "08-Nov-2025",
+    "status": "Ready for Pickup",
+    "remarks": "Awaiting your transporter details to release the goods.",
+    "ai_analysis": {
+      "impact": "Schedule Risk - Missing transporter details may delay pickup.",
+      "recommendation": "Confirm transporter details with CARMA Logistics Team immediately.",
+      "confidence_score": 0.85
+    }
+  },
+  {
+    "id": "19a540eb0ce14121",
+    "from": "chandru.subramani@techjays.com",
+    "subject": "Pending Dispatch – Electrical Panels for Project Cascade",
+    "date": "Wed, 5 Nov 2025 18:17:08 +0530",
+    "project_name": "Project Cascade",
+    "material_equipment": "Electrical Panels",
+    "lead_time_days": 5,
+    "quantity": 10,
+    "unit": "Sets",
+    "vendor_name": "Electric Supply Co.",
+    "delivery_date": "Pending",
+    "status": "Pending",
+    "remarks": "Awaiting final design approval before shipment.",
+    "ai_analysis": {
+      "impact": "Schedule Risk - Missing design approval may delay shipment of electrical panels.",
+      "recommendation": "Follow up with engineering division for expedited design approval.",
+      "confidence_score": 0.85
+    }
+  },
+  {
+    "id": "19a540e28e537ef1",
+    "from": "chandru.subramani@techjays.com",
+    "subject": "Delivery Confirmation – HVAC Ducts for Penthouse A",
+    "date": "Wed, 5 Nov 2025 18:16:33 +0530",
+    "project_name": "Penthouse A",
+    "material_equipment": "HVAC Ducts",
+    "lead_time_days": 0,
+    "quantity": 8,
+    "unit": "Sets",
+    "vendor_name": "Climate Control Systems",
+    "delivery_date": "10-Nov-2025",
+    "status": "Delivered",
+    "remarks": "All items verified before dispatch. No pending quantities.",
+    "ai_analysis": {
+      "impact": "Schedule Risk - Installation can begin as per plan, but future deliveries should be monitored.",
+      "recommendation": "Confirm installation schedule with the team and ensure all materials are on site.",
+      "confidence_score": 0.95
+    }
+  },
+  {
+    "id": "19a540da1281e25a",
+    "from": "chandru.subramani@techjays.com",
+    "subject": "Delivery Confirmation – Steel Frames for Penthouse A",
+    "date": "Wed, 5 Nov 2025 18:15:58 +0530",
+    "project_name": "Penthouse A",
+    "material_equipment": "Steel Frames",
+    "lead_time_days": 0,
+    "quantity": 12,
+    "unit": "Tons",
+    "vendor_name": "Steel Framing Inc.",
+    "delivery_date": "14-Nov-2025",
+    "status": "Confirmed",
+    "remarks": "Shipment left our warehouse today. Waybill will be shared shortly.",
+    "ai_analysis": {
+      "impact": "Schedule Risk - Missing delivery dates may delay interior fit-out progress.",
+      "recommendation": "Follow up with vendor immediately and escalate if no update within 2 days.",
+      "confidence_score": 0.87
+    }
+  },
+  {
+    "id": "19a540c9f44f8cf0",
+    "from": "chandru.subramani@techjays.com",
+    "subject": "Shipment Update – Custom Casework for Penthouse A",
+    "date": "Wed, 5 Nov 2025 18:14:52 +0530",
+    "project_name": "Penthouse A",
+    "material_equipment": "Custom Casework",
+    "lead_time_days": 40,
+    "quantity": 5,
+    "unit": "Sets",
+    "vendor_name": "Elite Millwork",
+    "delivery_date": "Pending",
+    "status": "Pending",
+    "remarks": "Awaiting vendor confirmation on delivery date.",
+    "ai_analysis": {
+      "impact": "Schedule Risk - Missing delivery dates may delay interior fit-out progress.",
+      "recommendation": "Follow up with vendor immediately and escalate if no update within 2 days.",
+      "confidence_score": 0.87
+    }
+  },
+  {
+    "id": "19a542c06e4af771",
+    "from": "carmaaidemo@gmail.com",
+    "subject": "Re: Plumbing Fixtures Ready for Pickup – Project Cascade",
+    "date": "Wed, 5 Nov 2025 18:49:22 +0530",
+    "project_name": "Project Cascade",
+    "material_equipment": "Plumbing Fixtures",
+    "lead_time_days": 0,
+    "quantity": 25,
+    "unit": "Units",
+    "vendor_name": "Pending",
+    "delivery_date": "08-Nov-2025",
+    "status": "Ready for Pickup",
+    "remarks": "All materials have passed the quality check and are packed for delivery.",
+    "ai_analysis": {
+      "impact": "Schedule Risk - Delays in pickup may affect project timelines.",
+      "recommendation": "Ensure logistics team is prepared for timely pickup.",
+      "confidence_score": 0.85
+    }
+  },
+  {
+    "id": "19a5432f6b27d0a5",
+    "from": "chandru.subramani@techjays.com",
+    "subject": "Urgent Update – Shipment Delay: Steel Frames for Penthouse A",
+    "date": "Wed, 5 Nov 2025 18:56:45 +0530",
+    "project_name": "Penthouse A",
+    "material_equipment": "Steel Frames",
+    "lead_time_days": 3,
+    "quantity": 12,
+    "unit": "Tons",
+    "vendor_name": "Steel Framing Inc.",
+    "delivery_date": "17-Nov-2025",
+    "status": "Delayed",
+    "remarks": "Delivery postponed due to logistics delay; rescheduled dispatch confirmed.",
+    "ai_analysis": {
+      "impact": "Schedule Risk - Missing delivery dates may delay project timelines.",
+      "recommendation": "Continue to monitor the situation and communicate with the vendor for updates.",
+      "confidence_score": 0.85
+    }
+  },
+  {
+    "id": "19a543ffcb13de1d",
+    "from": "chandru.subramani@techjays.com",
+    "subject": "Delivery Confirmation – Structural Steel Beams for Skyline Tower",
+    "date": "Wed, 5 Nov 2025 19:10:57 +0530",
+    "project_name": "Skyline Tower",
+    "material_equipment": "Structural Steel Beams",
+    "lead_time_days": 0,
+    "quantity": 50,
+    "unit": "Tons",
+    "vendor_name": "Steel Framing Inc.",
+    "delivery_date": "18-Nov-2025",
+    "status": "Confirmed",
+    "remarks": "Fabrication completed and shipment scheduled for tomorrow morning.",
+    "ai_analysis": {
+      "impact": "No immediate impact as fabrication is complete and ready for dispatch.",
+      "recommendation": "Ensure timely dispatch and monitor delivery to avoid any potential delays.",
+      "confidence_score": 0.95
+    }
+  },
+  {
+    "id": "19a5442383211f8a",
+    "from": "chandru.subramani@techjays.com",
+    "subject": "Urgent Update – Delivery Delay for Structural Steel Beams (Skyline Tower)",
+    "date": "Wed, 5 Nov 2025 19:13:25 +0530",
+    "project_name": "Skyline Tower",
+    "material_equipment": "Structural Steel Beams",
+    "lead_time_days": 0,
+    "quantity": 50,
+    "unit": "Tons",
+    "vendor_name": "Steel Framing Inc.",
+    "delivery_date": "21-Nov-2025",
+    "status": "Delayed",
+    "remarks": "Shipment rescheduled due to transport breakdown; revised delivery expected by 21-Nov-2025.",
+    "ai_analysis": {
+      "impact": "Schedule Risk - Missing delivery dates may delay construction progress.",
+      "recommendation": "Monitor logistics closely and prepare contingency plans for delays.",
+      "confidence_score": 0.85
+    }
+  },
+  {
+    "id": "19a54e009130cf6d",
+    "from": "chandru.subramani@techjays.com",
+    "subject": "On-Schedule Delivery Confirmation – Structural Steel Beams for Skyline Tower",
+    "date": "Wed, 5 Nov 2025 22:05:47 +0530",
+    "project_name": "Skyline Tower",
+    "material_equipment": "Structural Steel Beams",
+    "lead_time_days": 0,
+    "quantity": 50,
+    "unit": "Tons",
+    "vendor_name": "Steel Framing Inc.",
+    "delivery_date": "18-Nov-2025",
+    "status": "Confirmed",
+    "remarks": "Shipment on schedule — transport arranged and expected to arrive on time.",
+    "ai_analysis": {
+      "impact": "No immediate schedule risk as delivery is confirmed and on track.",
+      "recommendation": "Continue monitoring the delivery schedule to ensure timely arrival.",
+      "confidence_score": 0.95
+    }
+  },
+  {
+    "id": "19a56559d16e05cd",
+    "from": "noreply-payments@google.com",
+    "subject": "Action needed: Sign in to your account and take action",
+    "date": "Wed, 05 Nov 2025 15:24:02 -0800",
+    "project_name": "Pending",
+    "material_equipment": "Pending",
+    "lead_time_days": 0,
+    "quantity": 0,
+    "unit": "Pending",
+    "vendor_name": "Pending",
+    "delivery_date": "Pending",
+    "status": "Pending",
+    "remarks": "Pending",
+    "ai_analysis": {
+      "impact": "Pending",
+      "recommendation": "Pending",
+      "confidence_score": 0.0
+    }
+  },
+  {
+    "id": "19a56559c4edc31e",
+    "from": "CloudPlatform-noreply@google.com",
+    "subject": "Action required: Take action on your account to avoid service disruption.",
+    "date": "Wed, 05 Nov 2025 15:24:02 -0800",
+    "project_name": "Pending",
+    "material_equipment": "Pending",
+    "lead_time_days": 0,
+    "quantity": 0,
+    "unit": "Pending",
+    "vendor_name": "Pending",
+    "delivery_date": "Pending",
+    "status": "Pending",
+    "remarks": "No specific procurement details provided in the email.",
+    "ai_analysis": {
+      "impact": "No impact on procurement as the email is related to account service disruption.",
+      "recommendation": "Monitor account status and ensure payment information is updated.",
+      "confidence_score": 0.5
+    }
+  }
+]

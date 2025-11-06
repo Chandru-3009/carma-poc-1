@@ -2,6 +2,7 @@ import React, { useState, useMemo, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import nonResponsiveData from "../data/nonResponsiveData.json";
 import procurementLogsData from "../data/procurementLogsData.json";
+// Static import kept as fallback for project list initialization
 import procurementLogsDetailedData from "../data/procurementLogsDetailedData.json";
 import NonResponsiveTable from "../components/NonResponsiveTable";
 import ModuleCard from "../components/ModuleCard";
@@ -31,14 +32,22 @@ export default function AIDashboard() {
   const userRole = localStorage.getItem('userRole') || 'project_manager';
   const userEmail = localStorage.getItem('userEmail') || '';
   
+  // Static project list for Procurement Log Tracking
+  const projectList = ["Penthouse A", "Project Cascade", "Skyline Tower"];
+  
   // Set default active module based on user role
   // Project managers see Procurement Log Tracking by default, supervisors see Non-Responsive Subcontractors
   const [activeModule, setActiveModule] = useState(
     userRole === 'project_manager' ? 'procurement' : 'nonresponsive'
   );
-  const [selectedProject, setSelectedProject] = useState("");
+  const [selectedProject, setSelectedProject] = useState(projectList[0]); // Default to "Penthouse A"
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  
+  // Procurement API state
+  const [procurementData, setProcurementData] = useState([]);
+  const [procurementLoading, setProcurementLoading] = useState(false);
+  const [procurementError, setProcurementError] = useState(null);
 
   // Ensure activeModule is set correctly on mount
   useEffect(() => {
@@ -50,6 +59,123 @@ export default function AIDashboard() {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); // Run only once on mount - userRole is read from localStorage and doesn't change during component lifecycle
+
+  // Normalize status from API response to match dashboard logic
+  const normalizeStatus = (status) => {
+    if (!status) return "Pending";
+    const statusLower = status.toLowerCase();
+    if (statusLower.includes("confirmed") || statusLower.includes("delivered") || statusLower.includes("complete")) {
+      return "Confirmed";
+    }
+    if (statusLower.includes("delayed") || statusLower.includes("overdue")) {
+      return "Delayed";
+    }
+    if (statusLower.includes("pending") || statusLower.includes("awaiting")) {
+      return "Pending";
+    }
+    return "Pending"; // Default to Pending for unknown statuses
+  };
+
+  // Generate unique key for a procurement record
+  const getRecordKey = (record) => {
+    const project = (record.project_name || '').trim().toLowerCase();
+    const material = (record.material_equipment || '').trim().toLowerCase();
+    const vendor = (record.vendor_name || '').trim().toLowerCase();
+    return `${project}||${material}||${vendor}`;
+  };
+
+  // Deduplicate procurement data by replacing existing records with same key
+  // First deduplicates within the new data itself, then merges with existing data
+  const deduplicateProcurementData = (newData, existingData, currentProject) => {
+    // Step 1: Deduplicate within new data itself (in case API returns duplicates)
+    const newDataMap = new Map();
+    newData.forEach(record => {
+      const key = getRecordKey(record);
+      // Keep the latest record if duplicates exist (based on array order)
+      newDataMap.set(key, record);
+    });
+    const deduplicatedNewData = Array.from(newDataMap.values());
+
+    // Step 2: If no existing data, return deduplicated new data
+    if (!existingData || existingData.length === 0) {
+      return deduplicatedNewData;
+    }
+
+    // Step 3: Create a map of existing records, excluding records from current project
+    const existingMap = new Map();
+    existingData.forEach(record => {
+      const key = getRecordKey(record);
+      const recordProject = (record.project_name || '').trim().toLowerCase();
+      const currentProjectLower = (currentProject || '').trim().toLowerCase();
+      
+      // Keep records from other projects, but remove records from current project
+      // (they will be replaced with new data)
+      if (recordProject !== currentProjectLower) {
+        existingMap.set(key, record);
+      }
+    });
+
+    // Step 4: Merge new data with existing data (new data replaces existing for current project)
+    deduplicatedNewData.forEach(newRecord => {
+      const key = getRecordKey(newRecord);
+      existingMap.set(key, newRecord); // Replace or add new record
+    });
+
+    // Step 5: Convert map back to array
+    return Array.from(existingMap.values());
+  };
+
+  // Fetch procurement data from API
+  const fetchProcurementData = async (projectName) => {
+    if (!projectName) {
+      setProcurementData([]);
+      return;
+    }
+
+    setProcurementLoading(true);
+    setProcurementError(null);
+
+    try {
+      const response = await fetch('/api/procurement/emails/extract', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ projects: [projectName] }),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({ detail: `HTTP ${response.status}` }));
+        throw new Error(errorData.detail || `Failed to fetch procurement data: ${response.status}`);
+      }
+
+      const data = await response.json();
+      
+      // Normalize status fields in the response
+      const normalizedData = Array.isArray(data) ? data.map(item => ({
+        ...item,
+        status: normalizeStatus(item.status)
+      })) : [];
+      
+      // Deduplicate: replace existing records with same project_name + material_equipment + vendor_name
+      // Remove old records for current project and replace with new ones
+      setProcurementData(prevData => {
+        return deduplicateProcurementData(normalizedData, prevData, projectName);
+      });
+    } catch (error) {
+      console.error('Error fetching procurement data:', error);
+      setProcurementError(error.message || 'Failed to fetch procurement data');
+      setProcurementData([]);
+    } finally {
+      setProcurementLoading(false);
+    }
+  };
+
+  // Fetch procurement data when project changes or module is activated
+  useEffect(() => {
+    if (selectedProject && activeModule === 'procurement') {
+      fetchProcurementData(selectedProject);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedProject, activeModule]);
 
   // Filter data based on role - supervisors only see their assigned projects
   const filteredData = useMemo(() => {
@@ -111,24 +237,25 @@ export default function AIDashboard() {
     }));
   }, [filteredData]);
 
-  // Get unique projects from detailed procurement logs
-  const uniqueProjects = useMemo(() => {
-    const projects = [...new Set(procurementLogsDetailedData.map(item => item.project_name))];
-    return projects.sort();
-  }, []);
-
-  // Set default selected project on mount
-  useEffect(() => {
-    if (uniqueProjects.length > 0 && !selectedProject) {
-      setSelectedProject(uniqueProjects[0]);
-    }
-  }, [uniqueProjects, selectedProject]);
+  // Use static project list
+  const uniqueProjects = projectList;
 
   // Filter and sort detailed procurement logs by selected project (always sorted by risk)
   const filteredProcurementLogs = useMemo(() => {
     if (!selectedProject) return [];
     
-    let filtered = procurementLogsDetailedData.filter(item => item.project_name === selectedProject);
+    // Use API data if available, otherwise fallback to static data
+    const dataSource = procurementData.length > 0 ? procurementData : procurementLogsDetailedData;
+    let filtered = dataSource.filter(item => item.project_name === selectedProject);
+    
+    // Deduplicate within filtered data (in case there are still duplicates)
+    const deduplicatedMap = new Map();
+    filtered.forEach(record => {
+      const key = getRecordKey(record);
+      // Keep the latest record if duplicates exist
+      deduplicatedMap.set(key, record);
+    });
+    filtered = Array.from(deduplicatedMap.values());
     
     // Always sort by risk priority
     filtered = [...filtered].sort((a, b) => {
@@ -153,7 +280,7 @@ export default function AIDashboard() {
     });
     
     return filtered;
-  }, [selectedProject]);
+  }, [selectedProject, procurementData]);
 
   // Calculate procurement summary stats from detailed data
   const procurementStats = useMemo(() => {
@@ -271,8 +398,9 @@ export default function AIDashboard() {
   const handleProjectChange = (newProject) => {
     setIsTransitioning(true);
     setIsDropdownOpen(false); // Close dropdown after selection
+    setSelectedProject(newProject);
+    // fetchProcurementData will be called automatically via useEffect when selectedProject changes
     setTimeout(() => {
-      setSelectedProject(newProject);
       setIsTransitioning(false);
     }, 200);
   };
@@ -481,13 +609,25 @@ export default function AIDashboard() {
                   
                   <button
                     onClick={() => {
-                      // Simulate re-analysis
-                      const event = new Event('reanalyze');
-                      window.dispatchEvent(event);
+                      // Refetch procurement data from API
+                      if (selectedProject) {
+                        fetchProcurementData(selectedProject);
+                      }
                     }}
-                    className="px-5 py-2.5 bg-gradient-to-r from-[#C9A94A] to-[#E0C870] text-[#1A1D22] font-semibold rounded-xl hover:shadow-[0_0_15px_rgba(201,169,74,0.4)] transition-all text-sm hover:scale-105"
+                    disabled={procurementLoading || !selectedProject}
+                    className="px-5 py-2.5 bg-gradient-to-r from-[#C9A94A] to-[#E0C870] text-[#1A1D22] font-semibold rounded-xl hover:shadow-[0_0_15px_rgba(201,169,74,0.4)] transition-all text-sm hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center gap-2"
                   >
-                    Re-Analyze Logs
+                    {procurementLoading ? (
+                      <>
+                        <svg className="animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        <span>Analyzing...</span>
+                      </>
+                    ) : (
+                      <span>Re-Analyze Logs</span>
+                    )}
                   </button>
                 </div>
               </div>
@@ -549,70 +689,100 @@ export default function AIDashboard() {
                 </h3>
               </div>
               <div className="overflow-x-auto">
-                <table className="w-full">
-                  <thead>
-                    <tr className="bg-[#0D0F12]/50 border-b border-[#C9A94A]/30">
-                      <th className="px-6 py-4 text-left text-sm font-semibold text-[#C9A94A]">Material/Equipment</th>
-                      <th className="px-6 py-4 text-left text-sm font-semibold text-[#C9A94A]">Vendor</th>
-                      <th className="px-6 py-4 text-center text-sm font-semibold text-[#C9A94A]">Quantity</th>
-                      <th className="px-6 py-4 text-center text-sm font-semibold text-[#C9A94A]">Lead Time</th>
-                      <th className="px-6 py-4 text-center text-sm font-semibold text-[#C9A94A]">Delivery Date</th>
-                      <th className="px-6 py-4 text-center text-sm font-semibold text-[#C9A94A]">Status</th>
-                      <th className="px-6 py-4 text-left text-sm font-semibold text-[#C9A94A]">Remarks</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {filteredProcurementLogs.length > 0 ? (
-                      filteredProcurementLogs.map((log, idx) => {
-                        const hasMissingDeliveryDate = log.delivery_date === "Pending";
-                        
-                        return (
-                          <tr 
-                            key={idx} 
-                            className={`border-b border-[#C9A94A]/10 transition-all duration-200 hover:bg-[#0D0F12]/30 hover:border-[#C9A94A]/20 animate-fadeIn ${
-                              idx % 2 === 0 ? 'bg-[#1A1D22]/30' : 'bg-[#1E2126]/50'
-                            }`}
-                            style={{ animationDelay: `${idx * 50}ms` }}
-                          >
-                            <td className="px-6 py-4 text-sm text-[#EDEDED] font-medium">
-                              {log.material_equipment}
-                            </td>
-                            <td className="px-6 py-4 text-sm text-[#B0B0B0]">
-                              {log.vendor_name}
-                            </td>
-                            <td className="px-6 py-4 text-sm text-center text-[#EDEDED]">
-                              {log.quantity} {log.unit}
-                            </td>
-                            <td className="px-6 py-4 text-sm text-center text-[#B0B0B0]">
-                              {log.lead_time_days} days
-                            </td>
-                            <td className={`px-6 py-4 text-sm text-center ${
-                              hasMissingDeliveryDate 
-                                ? 'text-[#b3b3b3] italic' 
-                                : 'text-[#EDEDED]'
-                            }`}>
-                              {formatDate(log.delivery_date)}
-                            </td>
-                            <td className="px-6 py-4 text-center">
-                              <span className={getStatusBadge(log.status)}>
-                                {log.status}
-                              </span>
-                            </td>
-                            <td className="px-6 py-4 text-sm text-[#B0B0B0]">
-                              {log.remarks}
-                            </td>
-                          </tr>
-                        );
-                      })
-                    ) : (
-                      <tr>
-                        <td colSpan="7" className="px-6 py-16 text-center text-[#B0B0B0]">
-                          No procurement logs available for the selected project.
-                        </td>
+                {procurementLoading ? (
+                  <div className="px-6 py-16 text-center">
+                    <div className="inline-flex items-center gap-3 text-[#C9A94A]">
+                      <svg className="animate-spin h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      <span className="text-[#EDEDED]">Loading procurement data...</span>
+                    </div>
+                  </div>
+                ) : procurementError ? (
+                  <div className="px-6 py-16 text-center">
+                    <div className="text-red-400 mb-2">
+                      <svg className="w-12 h-12 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <p className="text-red-400 font-semibold mb-2">Error Loading Data</p>
+                    <p className="text-[#B0B0B0] text-sm mb-4">{procurementError}</p>
+                    <button
+                      onClick={() => selectedProject && fetchProcurementData(selectedProject)}
+                      className="px-4 py-2 bg-gradient-to-r from-[#C9A94A] to-[#E0C870] text-[#1A1D22] font-medium rounded-lg hover:shadow-[0_0_10px_rgba(201,169,74,0.4)] transition-all text-sm"
+                    >
+                      Retry
+                    </button>
+                  </div>
+                ) : (
+                  <table className="w-full">
+                    <thead>
+                      <tr className="bg-[#0D0F12]/50 border-b border-[#C9A94A]/30">
+                        <th className="px-6 py-4 text-left text-sm font-semibold text-[#C9A94A]">Material/Equipment</th>
+                        <th className="px-6 py-4 text-left text-sm font-semibold text-[#C9A94A]">Vendor</th>
+                        <th className="px-6 py-4 text-center text-sm font-semibold text-[#C9A94A]">Quantity</th>
+                        <th className="px-6 py-4 text-center text-sm font-semibold text-[#C9A94A]">Lead Time</th>
+                        <th className="px-6 py-4 text-center text-sm font-semibold text-[#C9A94A]">Delivery Date</th>
+                        <th className="px-6 py-4 text-center text-sm font-semibold text-[#C9A94A]">Status</th>
+                        <th className="px-6 py-4 text-left text-sm font-semibold text-[#C9A94A]">Remarks</th>
                       </tr>
-                    )}
-                  </tbody>
-                </table>
+                    </thead>
+                    <tbody>
+                      {filteredProcurementLogs.length > 0 ? (
+                        filteredProcurementLogs.map((log, idx) => {
+                          const hasMissingDeliveryDate = log.delivery_date === "Pending";
+                          
+                          return (
+                            <tr 
+                              key={log.id || idx} 
+                              className={`border-b border-[#C9A94A]/10 transition-all duration-200 hover:bg-[#0D0F12]/30 hover:border-[#C9A94A]/20 animate-fadeIn ${
+                                idx % 2 === 0 ? 'bg-[#1A1D22]/30' : 'bg-[#1E2126]/50'
+                              }`}
+                              style={{ animationDelay: `${idx * 50}ms` }}
+                            >
+                              <td className="px-6 py-4 text-sm text-[#EDEDED] font-medium">
+                                {log.material_equipment || "N/A"}
+                              </td>
+                              <td className="px-6 py-4 text-sm text-[#B0B0B0]">
+                                {log.vendor_name || "N/A"}
+                              </td>
+                              <td className="px-6 py-4 text-sm text-center text-[#EDEDED]">
+                                {log.quantity || 0} {log.unit || ""}
+                              </td>
+                              <td className="px-6 py-4 text-sm text-center text-[#B0B0B0]">
+                                {log.lead_time_days || 0} days
+                              </td>
+                              <td className={`px-6 py-4 text-sm text-center ${
+                                hasMissingDeliveryDate 
+                                  ? 'text-[#b3b3b3] italic' 
+                                  : 'text-[#EDEDED]'
+                              }`}>
+                                {formatDate(log.delivery_date)}
+                              </td>
+                              <td className="px-6 py-4 text-center">
+                                <span className={getStatusBadge(log.status)}>
+                                  {log.status || "Pending"}
+                                </span>
+                              </td>
+                              <td className="px-6 py-4 text-sm text-[#B0B0B0]">
+                                {log.remarks || "N/A"}
+                              </td>
+                            </tr>
+                          );
+                        })
+                      ) : (
+                        <tr>
+                          <td colSpan="7" className="px-6 py-16 text-center text-[#B0B0B0]">
+                            {selectedProject 
+                              ? "No procurement logs available for the selected project."
+                              : "Please select a project to view procurement logs."}
+                          </td>
+                        </tr>
+                      )}
+                    </tbody>
+                  </table>
+                )}
               </div>
             </div>
 
@@ -627,7 +797,20 @@ export default function AIDashboard() {
 
               {/* Vendor Insights */}
               <div className="space-y-6 mb-6">
-                {Object.entries(procurementStats.vendorMap).map(([vendorName, vendorLogs]) => {
+                {procurementLoading ? (
+                  <div className="text-center py-8 text-[#B0B0B0]">
+                    <p>Loading AI insights...</p>
+                  </div>
+                ) : procurementError ? (
+                  <div className="text-center py-8 text-[#B0B0B0]">
+                    <p>Unable to load AI insights. Please retry.</p>
+                  </div>
+                ) : Object.keys(procurementStats.vendorMap).length === 0 ? (
+                  <div className="text-center py-8 text-[#B0B0B0]">
+                    <p>No vendor insights available for this project.</p>
+                  </div>
+                ) : (
+                  Object.entries(procurementStats.vendorMap).map(([vendorName, vendorLogs]) => {
                   const vendorImpact = vendorLogs[0]?.ai_analysis?.impact || "No analysis available";
                   const vendorRecommendation = vendorLogs[0]?.ai_analysis?.recommendation || "Continue regular tracking.";
                   
@@ -675,7 +858,8 @@ export default function AIDashboard() {
                       </div>
                     </div>
                   );
-                })}
+                  })
+                )}
               </div>
 
               {/* AI Tip Section */}

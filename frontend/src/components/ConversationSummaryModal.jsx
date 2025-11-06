@@ -197,7 +197,7 @@ export default function ConversationSummaryModal({ isOpen, onClose, threadData, 
         </div>
 
         {/* Footer Actions */}
-        <div className="p-6 border-t border-[#C9A94A]/20 flex justify-end gap-3">
+        {/* <div className="p-6 border-t border-[#C9A94A]/20 flex justify-end gap-3">
           <button
             onClick={onClose}
             className="px-5 py-2 text-[#B0B0B0] hover:text-[#EDEDED] transition"
@@ -220,7 +220,7 @@ export default function ConversationSummaryModal({ isOpen, onClose, threadData, 
               Escalate to Project Manager
             </button>
           )}
-        </div>
+        </div> */}
       </div>
 
       {/* AI Reply Modal - Only for Project Managers */}
